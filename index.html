@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planer budżetowy</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Planer wydatków</h1>
+        
+        <div class="top-section">
+            <div class="input-section">
+                <input type="number" id="amountInput" placeholder="Wpisz kwotę" step="0.01">
+                <button id="addBtn">Dodaj</button>
+            </div>
+            
+            <div class="top-panels">
+                <div id="resultsList"></div>
+                
+                <div class="chart-panel">
+                    <h3>Przegląd budżetu</h3>
+                    <canvas id="budgetChart"></canvas>
+                    <div id="chartLegend" class="chart-legend"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="categories-section">
+            <div class="category-column">
+                <h2>Rachunki</h2>
+                <div class="bills-input">
+                    <input type="text" id="bills-category" placeholder="Kategoria (np. Energia)">
+                    <input type="date" id="bills-due">
+                    <input type="number" id="bills-budget" placeholder="Budżet" step="0.01">
+                    <input type="number" id="bills-cost" placeholder="Rzeczywisty koszt" step="0.01">
+                    <button id="bills-add-btn">Dodaj</button>
+                </div>
+                <table class="bills-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Kategoria</th>
+                            <th>Termin</th>
+                            <th>Budżet</th>
+                            <th>Rzeczywisty</th>
+                            <th>Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rachunki-list">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="category-column">
+                <h2>Wydatki</h2>
+                <div class="expense-input">
+                    <input type="text" id="expense-category" placeholder="Kategoria">
+                    <input type="number" id="expense-budget" placeholder="Budżet" step="0.01">
+                    <input type="number" id="expense-actual" placeholder="Rzeczywisty" step="0.01">
+                    <button id="expense-add-btn">Dodaj</button>
+                </div>
+                <table class="expense-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Kategoria</th>
+                            <th>Budżet</th>
+                            <th>Rzeczywisty</th>
+                            <th>Pozostało</th>
+                            <th>Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody id="wydatki-list">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="category-column">
+                <h2>Długi</h2>
+                <div class="debt-input">
+                    <input type="text" id="debt-category" placeholder="Kategoria">
+                    <input type="date" id="debt-due">
+                    <input type="number" id="debt-budget" placeholder="Budżet" step="0.01">
+                    <input type="number" id="debt-actual" placeholder="Rzeczywisty" step="0.01">
+                    <button id="debt-add-btn">Dodaj</button>
+                </div>
+                <table class="debt-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Kategoria</th>
+                            <th>Termin</th>
+                            <th>Budżet</th>
+                            <th>Rzeczywisty</th>
+                            <th>Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody id="długi-list">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
